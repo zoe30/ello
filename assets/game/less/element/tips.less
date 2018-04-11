@@ -1,0 +1,128 @@
+.tipsPanel{
+  .scenter;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  border-radius: .8rem;
+  overflow: hidden;
+}
+
+.tipsSettings{
+  width: 90%;
+  .thd{
+    height: 5rem;
+    background: @color-hl;
+    font-size: 2rem;
+    line-height: 5rem;
+    text-align: center;
+  }
+  .tbd{
+    padding: 1rem 2.5rem;
+    background: #fff;
+  }
+  .content{
+    padding: .5rem 0;
+    border-bottom: .2rem solid #eee;
+    &:last-child{
+      border:none;
+    }
+  }
+  .item{
+    .clearfix;
+    margin: 1.5rem 0 3rem;
+    .tipsword,.tips{
+      float: left;
+      padding-left: 3.5rem;
+    }
+    h3{
+      position: relative;
+      margin: 0;
+      padding:0;
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      .icon{
+        position: absolute;
+        top:.2rem;
+        left: -2.7rem;
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+      }
+    }
+    p{
+      font-size: 1.0rem;
+      line-height: 1.4rem;
+      color: #858685;
+    }
+    label{
+      position: relative;
+      float: right;
+      margin-top: -0.6rem;
+      font-size: 1.4rem;
+      &:before{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: inline-block;
+        vertical-align: middle;
+        content: "";
+        height: 3rem;
+        width: 6rem;
+        margin-right: .7rem;
+        background: #f4f4f4;
+        border: .1rem solid #e4e3e3;
+        border-radius: 3rem;
+      }
+      &:after{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left:0;
+        display: inline-block;
+        vertical-align: middle;
+        content: "";
+        height: 3rem;
+        width: 3rem;
+        background: #fff;
+        border: .1rem solid #e4e3e3;
+        border-radius: 3rem;
+        transition: all .3s;
+      }
+      &.active{
+        &:after{
+          top: .1rem;
+          left: 3rem;
+          height: 2.8rem;
+          width: 2.8rem;
+          background: @color-hl;
+          border: .2rem solid #fff;
+        }
+      }
+    }
+  }
+  .itemOptimize{
+    .tipsword,.tips{
+      margin-top: -1.4rem;
+    }
+  }
+  .intro{
+    padding: 2rem 0;
+    text-align: center;
+    img{
+      width:96%;
+    }
+  }
+  .copyright{
+    text-align:center;
+    font-size: .9rem;
+    color: @color-grey;
+  }
+  .tclose{
+    background: @color-hl;
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 4rem;
+  }
+}

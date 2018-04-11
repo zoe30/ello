@@ -1,0 +1,105 @@
+.screenPanel{
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow:hidden;
+}
+
+.screenPanel{
+  -webkit-overflow-scrolling : touch;
+  overflow-y:scroll;
+  .shd{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    background: @color-hl;
+    height: 6rem;
+    .item{
+      float: left;
+      width: 50%;
+      height: 5.5rem;
+      line-height: 5.5rem;
+      border-bottom: .5rem solid @color-hl;
+      font-size: 1.8rem;
+      text-align:center;
+      &.active{
+        border-color: @color-font;
+      }
+    }
+  }
+  .sbd{
+    -webkit-overflow-scrolling : touch;
+    overflow-y:scroll;
+    padding: 6rem 0;
+  }
+  .sclose{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: @color-hl;
+    text-align: center;
+    font-size: 3rem;
+    line-height: 5rem;
+    color: @color-font;
+  }
+  ol{
+    display: table;
+    width:100%;
+    li{
+      display:table-row;
+      background: #e7ebeb;
+    }
+    .rank,.pic,.name,.score{
+      display: table-cell;
+      font-size: 100%;
+      padding: 10px;
+      vertical-align: middle;
+      color: #685a4c;
+    }
+    .rank{
+      width:1.4em;
+      font-size: 1.4rem;
+      font-style: italic;
+    }
+    .score{
+      text-align:right;
+      font-size: 1.8rem;
+    }
+    .pic{
+      position: relative;
+      width: 5rem;
+      padding: 10px 0;
+      img{
+        width:4rem;height:4rem;border-radius: 4rem;
+        //border:4px solid #e7ebeb;
+        border:4px solid #fff;
+      }
+    }
+    .rank1,.rank2,.rank3{
+      background: #fff;
+      border-bottom: 2px solid #e7ebeb;
+      img{
+        border-color: #e7ebeb;
+      }
+    }
+    .rank1{
+      .pic:after {
+        content: "";
+        background: url("http://newello.ileou.com/ecms/Tpl/Home/Ellota/img/iconone.png") no-repeat center;
+        -wt-background-size: cover;
+        background-size: 100% auto;
+        position: absolute;
+        top: 0em;
+        left: 0em;
+        width: 1.8em;
+        height: 1.8em;
+        transform: rotate(-5deg);
+      }
+    }
+  }
+}

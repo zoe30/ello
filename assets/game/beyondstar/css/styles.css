@@ -1,0 +1,526 @@
+html {
+    height: 100%;
+    background-color: #1d292c
+}
+body {
+    margin: 0;
+    max-height: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #1d292c;
+    font-family: Helvetica, arial, sans-serif;
+    position: relative;
+    width: 100%
+}
+* {
+    box-sizing: border-box
+}
+#application-canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0
+}
+#application-canvas.fill-mode-NONE {
+    margin: auto
+}
+#application-canvas.fill-mode-KEEP_ASPECT {
+    width: 100%;
+    height: auto;
+    margin: 0
+}
+#application-canvas.fill-mode-FILL_WINDOW {
+    width: 100%;
+    height: 100%;
+    margin: 0
+}
+canvas:focus {
+    outline: none
+}
+body {
+    background-color: #283538
+}
+#application-splash-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url(../images/loading.png);
+    background-size: 100% auto;
+    background-position: bottom
+}
+#application-splash {
+    position: absolute;
+    bottom: 12rem;
+    width: 264px;
+    left: calc(50% - 132px)
+}
+#application-splash img {
+    width: 100%
+}
+#progress-bar-container {
+    margin: 20px auto 0 auto;
+    height: 2px;
+    width: 100%;
+    background-color: #1d292c
+}
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #55d1dd
+}
+@media (max-width:480px) {
+    #application-splash {
+        width: 170px;
+        left: calc(50% - 85px)
+    }
+}
+ul, ol, li, p {
+    margin: 0;
+    padding: 0
+}
+li {
+    list-style: none
+}
+a {
+    text-decoration: none
+}
+.mlogo {
+    margin-top: 1.7rem;
+    width: 9rem;
+    position: relative
+}
+.tipsPanel {
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: none
+}
+.tips_bg {
+    width: 100%
+}
+.tipsSettings .content {
+    position: absolute;
+    right: 20%;
+    top: 20%
+}
+.tipsSettings .content:last-child {
+    border: none
+}
+.tipsSettings .item {
+    *zoom: 1;
+    margin: 1.5rem 0 3.6rem
+}
+.tipsSettings .item:after {
+    display: table;
+    line-height: 0;
+    content: "";
+    clear: both
+}
+.tipsSettings .item label {
+    position: relative;
+    float: right;
+    margin-top: -0.6rem;
+    font-size: 1.4rem
+}
+.tipsSettings .item label:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    height: 2rem;
+    width: 4rem;
+    margin-right: .7rem;
+    background: #f4f4f4;
+    border: .1rem solid #e4e3e3;
+    border-radius: 3rem
+}
+.tipsSettings .item label:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    background: #fff;
+    border: .1rem solid #e4e3e3;
+    border-radius: 3rem;
+    transition: all .3s
+}
+.tipsSettings .item label.active:after {
+    top: .1rem;
+    left: 2rem;
+    height: 1.8rem;
+    width: 1.8rem;
+    background: #6fcfd9;
+    border: .2rem solid #fff
+}
+.tipsSettings .tclose {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    bottom: 6%
+}
+.logo {
+    position: absolute;
+    left: 10%;
+    top: 25%;
+    width: 80%
+}
+.logo img {
+    width: 100%
+}
+#uistart {
+    position: absolute;
+    left: 0;
+    bottom: 11rem;
+    text-align: center;
+    width: 100%
+}
+#start {
+    width: 19.2rem
+}
+#uiend {
+    display: none
+}
+.buttons {
+    position: absolute;
+    bottom: 3rem;
+    width: 100%;
+    height: auto;
+    text-align: center
+}
+.buttons li {
+    display: inline-block;
+    margin-left: 3.6rem
+}
+.btnReward, .btnRank {
+    width: 4.4rem;
+    height: 6rem
+}
+.btnSetting {
+    width: 2.7rem;
+    height: 2.7rem
+}
+.btnReward {
+    background: url(../images/reward.png) no-repeat;
+    background-size: 100% 100%
+}
+.btnRank {
+    background: url(../images/rank.png) no-repeat;
+    background-size: 100% 100%
+}
+.btnSetting {
+    background: url(../images/setting.png) no-repeat;
+    background-size: 100% 100%
+}
+.buttons li:first-child {
+    margin-left: 0
+}
+.buttons i, .buttons span {
+    display: block;
+    color: #fff
+}
+.buttons .icon {
+    font-size: 2.5rem
+}
+.buttons span {
+    line-height: 2em
+}
+.buttons.ended {
+    width: auto;
+    left: 2.5rem
+}
+.buttons.ended li {
+    display: block;
+    margin: 1.5rem 0 0 !important
+}
+.buttons .btnSetting {
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 3rem
+}
+#loadscene {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 2.8rem;
+    width: 4.4rem
+}
+.result {
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    width: 100%;
+    color: #57dff9;
+    font-style: italic;
+    text-align: center
+}
+.result #rank1, .result #rank2, .result #rank3 {
+    opacity: 1;
+    transition: all .3s
+}
+.playing .result {
+    display: block
+}
+.playing #start {
+    display: none
+}
+.playing #rank1, .playing #rank2, .playing #rank3 {
+    opacity: 0
+}
+#rank1 {
+    font-size: 1.8rem;
+    line-height: 2rem
+}
+#score {
+    margin-top: .5rem;
+    font-size: 4rem;
+    line-height: 4.5rem
+}
+#rank2 {
+    font-size: 1.4rem;
+    line-height: 2rem
+}
+#infopage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0
+}
+#infopage  img {
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    bottom: 2rem
+}
+.close_info_btn {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    bottom: 2rem;
+    right: 10%
+}
+#infocontent {
+    position: absolute;
+    left: 7%;
+    top: 10%;
+    width: 86%;
+    height: auto
+}
+#return {
+    position: absolute;
+    left: 80%;
+    top: 88%;
+    width: 9%;
+    height: auto
+}
+#share {
+    position: absolute;
+    left: 17%;
+    top: 0;
+    width: 80%;
+    height: auto
+}
+@media screen and (max-width:320px) {
+}
+#gamebox {
+    display: none
+}
+a {
+    text-decoration: none
+}
+#rankpanel .tabs {
+    margin: 0
+}
+#btnrank {
+    position: absolute;
+    left: 86.5%;
+    top: 82%;
+    width: 9.5%;
+    height: auto
+}
+#rankpanel {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #001218;
+    overflow: hidden
+}
+#rankpanel .title {
+    text-align: center
+}
+#rankpanel .quanguo_rank {
+    margin: 2rem 0 0.5rem 0;
+    height: 3rem
+}
+#rankpanel .list {
+    width: 96%;
+    margin: 0 auto;
+    height: calc(100% - 5.5rem);
+    background: url(../images/border.png) no-repeat;
+    background-size: 100% 100%;
+    color: #0ff;
+    padding: 2rem 1rem 0 1rem
+}
+#rankpanel .myrank {
+    font-size: 1.5em
+}
+#rankpanel .list ol{
+    -webkit-overflow-scrolling : touch;
+    height: calc(100% - 11rem);
+    overflow: auto;
+}
+#rankpanel .myrank, #rankpanel li {
+    padding: 1rem;
+    height: 5rem;
+    position: relative;
+    line-height: 3rem;
+    margin-bottom: 1rem
+}
+#rankpanel .myrank:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -0.3rem;
+    height: 0.5rem;
+    left: 0;
+    background: url(../images/line_03.png) no-repeat;
+    background-size: 100% 100%
+}
+#rankpanel li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -0.7rem;
+    height: 0.2rem;
+    left: 0;
+    background: url(../images/line_06.png) no-repeat;
+    background-size: 100% 100%
+}
+#rankpanel li:nth-child(odd) {
+    background-color: #001520
+}
+#rankpanel li {
+    font-size: 1.4rem
+}
+#rankpanel  .rank {
+    width: 12%;
+    float: left;
+    text-align: center
+}
+.name {
+    width: 50%;
+    float: left;
+    margin-left: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.score {
+    width: 12%;
+    float: right
+}
+#rankpanel .pic {
+    float: left;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 3rem;
+    overflow: hidden
+}
+#rankpanel .pic img {
+    width: 100%
+}
+#rankpanel .close_rank {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    height: 5rem;
+    width: 100%
+}
+#rankpanel .close_rank img {
+    height: 100%
+}
+.loadding_box {
+    position: absolute;
+    width: 100%;
+    background-color: #001218;
+    top: 0;
+    bottom: 0
+}
+.loading_n_box {
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    top: 40%;
+    text-align: center
+}
+.xuanzhuang {
+    width: 30px;
+    -webkit-animation: xuanzhuang 2s linear infinite;
+    animation: xuanzhuang 2s linear infinite
+}
+@keyframes xuanzhuang {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+@-webkit-keyframes xuanzhuang {
+    from {
+        -webkit-transform: rotate(0)
+    }
+    to {
+        -webkit-transform: rotate(360deg)
+    }
+}
+.share_mask {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    filter: alpha(opacity=80);
+    background-color: #000;
+    z-index: 1002;
+    left: 0px;
+    opacity: 0.8;
+    -moz-opacity: 0.8
+}
+.tip_img_box {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2e2e2e;
+    z-index: 3;
+}
+.show_hengping, .show_shuping {
+    width: 22rem;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}

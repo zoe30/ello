@@ -1,0 +1,117 @@
+#start
+{
+    position:absolute;
+    left:38%;
+    top:60%;
+    width:24%;
+    height:auto;
+}
+
+#uiend
+{
+    display:none;
+}
+
+#title
+{
+   position:absolute;
+   left:15%;
+   top:20%;
+   width:70%;
+   height:auto;
+}
+
+#sound
+{
+   position:absolute;
+   left:86.5%;
+   top:7%;
+   width:10%;
+   height:auto; 
+}
+
+#score
+{
+    position: absolute;
+    width: 100%;
+    top: 5%;
+    color: #ffffff;
+    font-size: 60px;
+    font-family: initial;
+    text-align: center;
+    display:none;
+}
+
+
+#infopage
+{
+   display:none;
+}
+
+
+#infocontent
+{
+   position:absolute;
+   left:7%;
+   top:10%;
+   width:86%;
+   height:auto;
+}
+
+#return
+{
+   position:absolute;
+   left:80%;
+   top:88%;
+   width:9%;
+   height:auto;
+}
+
+#share
+{
+   position:absolute;
+   left:17%;
+   top:0;
+   width:80%;
+   height:auto;
+}
+
+#rank1
+{
+    position: absolute;
+    top: 22.5%;
+    width: 100%;
+    text-align: center;
+    color:#ffffff;
+    font-size:128%;
+    /*font-family:monospace; */
+}
+
+#rank2
+{
+    position: absolute;
+    top: 26.5%;
+    width: 100%;
+    text-align: center;
+    color:#ffffff;
+    font-size:128%;
+    line-height: 170%;
+    /*font-family:monospace; */
+}
+#rank3
+{
+    position: absolute;
+    top: 30.5%;
+    width: 100%;
+    text-align: center;
+    color:#ffffff;
+    font-size:128%;
+    line-height: 170%;
+    /*font-family:monospace; */
+}
+
+@media screen and (max-width : 320px) {
+    #score{
+        font-size:3.3em;
+    }
+}

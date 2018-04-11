@@ -1,0 +1,691 @@
+{
+	"name": "Stack",
+	"created": "2016-02-29T01:17:49.915Z",
+	"settings": {
+		"physics": {
+			"gravity": [0, -9.8, 0]
+		},
+		"render": {
+			"fog_end": 1000,
+			"tonemapping": 0,
+			"skybox": null,
+			"fog_density": 0.01,
+			"gamma_correction": 1,
+			"exposure": 1,
+			"fog_start": 1,
+			"global_ambient": [0.8, 0.6196078431372549, 0.6196078431372549],
+			"skyboxIntensity": 1,
+			"fog_color": [0, 0, 0],
+			"fog": "none",
+			"lightmapMaxResolution": 2048,
+			"skyboxMip": 0,
+			"lightmapSizeMultiplier": 16
+		}
+	},
+	"entities": {
+		"3f9edfb8-de82-11e5-bd2e-22000ac481df": {
+			"template": null,
+			"parent": "3f9eddb0-de82-11e5-bd2e-22000ac481df",
+			"resource_id": "3f9edfb8-de82-11e5-bd2e-22000ac481df",
+			"labels": [],
+			"rotation": [-35, 45, 0.000007354071840381948],
+			"children": ["4a41035e-9460-4b9c-9bda-b0aeb4838b8e", "fe9d7ef2-daea-4b89-a22c-393e20a2397a"],
+			"scale": [1, 1, 1],
+			"name": "Camera",
+			"enabled": true,
+			"components": {
+				"camera": {
+					"projection": 1,
+					"farClip": 100,
+					"rect": [0, 0, 1, 1],
+					"priority": 1,
+					"fov": 45,
+					"clearDepthBuffer": true,
+					"clearColor": [0.722, 0.722, 0.722, 1],
+					"enabled": true,
+					"orthoHeight": 3,
+					"nearClip": 0.3,
+					"clearColorBuffer": true,
+					"frustumCulling": true
+				},
+				"script": {
+					"enabled": true,
+					"scripts": [{
+						"url": "../assets/game/ellota/CameraFollow.js",
+						"name": "CameraFollow",
+						"attributes": {},
+						"attributesOrder": []
+					}]
+				}
+			},
+			"position": [10, 10, 10],
+			"tags": []
+		},
+		"3f9eddb0-de82-11e5-bd2e-22000ac481df": {
+			"template": null,
+			"parent": null,
+			"resource_id": "3f9eddb0-de82-11e5-bd2e-22000ac481df",
+			"labels": [],
+			"rotation": [0, 0, 0],
+			"children": ["3f9edfb8-de82-11e5-bd2e-22000ac481df", "5c7560d4-1552-46e7-8f58-06783858128a", "e6e7281f-3302-40b3-a816-198f09163e76", "791a6b80-8f07-4571-b1a9-d896ed870e7f", "3ffe1f57-8e45-457c-94e7-1ebcafea6840", "784b63fe-fc6d-456e-bf2f-a2f0b336d5ef", "f7b974af-ddbc-47dc-83d8-40cb69cd3713"],
+			"scale": [1, 1, 1],
+			"name": "Root",
+			"enabled": true,
+			"components": {
+				"script": {
+					"enabled": true,
+					"scripts": [{
+						"url": "../assets/game/ellota/SwitchParticle.js",
+						"name": "SwitchParticle",
+						"attributes": {
+							"particle1": {
+								"name": "particle1",
+								"displayName": "particle1",
+								"defaultValue": null,
+								"value": "4a41035e-9460-4b9c-9bda-b0aeb4838b8e",
+								"type": "entity",
+								"options": {}
+							},
+							"particle2": {
+								"name": "particle2",
+								"displayName": "particle2",
+								"defaultValue": null,
+								"value": "fe9d7ef2-daea-4b89-a22c-393e20a2397a",
+								"type": "entity",
+								"options": {}
+							}
+						},
+						"attributesOrder": ["particle1", "particle2"]
+					}]
+				}
+			},
+			"position": [0, 0, 0],
+			"tags": []
+		},
+		"5c7560d4-1552-46e7-8f58-06783858128a": {
+			"name": "Box",
+			"enabled": true,
+			"resource_id": "5c7560d4-1552-46e7-8f58-06783858128a",
+			"parent": "3f9eddb0-de82-11e5-bd2e-22000ac481df",
+			"children": [],
+			"position": [0, -9.85, 0],
+			"rotation": [0, 0, 0],
+			"scale": [2, 20, 2],
+			"components": {
+				"model": {
+					"enabled": true,
+					"type": "box",
+					"asset": null,
+					"materialAsset": 3636708,
+					"castShadows": false,
+					"receiveShadows": false,
+					"lightmapped": false,
+					"castShadowsLightmap": false,
+					"lightmapSizeMultiplier": 1
+				}
+			},
+			"tags": []
+		},
+		"791a6b80-8f07-4571-b1a9-d896ed870e7f": {
+			"name": "prefab1",
+			"enabled": true,
+			"resource_id": "791a6b80-8f07-4571-b1a9-d896ed870e7f",
+			"parent": "3f9eddb0-de82-11e5-bd2e-22000ac481df",
+			"children": [],
+			"position": [1000, 0, 0],
+			"rotation": [0, 0, 0],
+			"scale": [1, 1, 1],
+			"components": {
+				"script": {
+					"enabled": true,
+					"scripts": [{
+						"url": "../assets/game/ellota/NewEntityMove.js",
+						"name": "NewEntityMove",
+						"attributes": {},
+						"attributesOrder": []
+					}]
+				},
+				"model": {
+					"enabled": true,
+					"type": "box",
+					"asset": null,
+					"materialAsset": null,
+					"castShadows": false,
+					"castShadowsLightmap": false,
+					"receiveShadows": false,
+					"lightmapped": false,
+					"lightmapSizeMultiplier": 1
+				}
+			},
+			"tags": []
+		},
+		"e6e7281f-3302-40b3-a816-198f09163e76": {
+			"name": "Directional Light",
+			"enabled": true,
+			"resource_id": "e6e7281f-3302-40b3-a816-198f09163e76",
+			"parent": "3f9eddb0-de82-11e5-bd2e-22000ac481df",
+			"children": [],
+			"position": [5, 0, 0.2668476104736328],
+			"rotation": [-15, -45, 0],
+			"scale": [1, 1, 1],
+			"components": {
+				"light": {
+					"enabled": true,
+					"type": "directional",
+					"bake": false,
+					"affectDynamic": true,
+					"color": [1, 1, 1],
+					"intensity": 1,
+					"castShadows": false,
+					"shadowDistance": 40,
+					"shadowResolution": 1024,
+					"shadowBias": 0.05,
+					"normalOffsetBias": 0,
+					"range": 10,
+					"falloffMode": 0,
+					"innerConeAngle": 40,
+					"outerConeAngle": 45,
+					"affectLightmapped": false,
+					"shadowUpdateMode": 2,
+					"shadowType": 0,
+					"vsmBlurMode": 0,
+					"vsmBlurSize": 5,
+					"vsmBias": 0.0025,
+					"cookieAsset": null,
+					"cookieIntensity": 1,
+					"cookieFalloff": true,
+					"cookieChannel": "rgb"
+				}
+			},
+			"tags": []
+		},
+		"784b63fe-fc6d-456e-bf2f-a2f0b336d5ef": {
+			"name": "PerfectEffect",
+			"enabled": false,
+			"resource_id": "784b63fe-fc6d-456e-bf2f-a2f0b336d5ef",
+			"parent": "3f9eddb0-de82-11e5-bd2e-22000ac481df",
+			"children": [],
+			"position": [0, 0, 0],
+			"rotation": [0, 0, 0],
+			"scale": [2.15, 1, 2.15],
+			"components": {
+				"model": {
+					"enabled": true,
+					"type": "plane",
+					"asset": null,
+					"materialAsset": 3656159,
+					"castShadows": false,
+					"receiveShadows": false,
+					"lightmapped": false,
+					"castShadowsLightmap": false,
+					"lightmapSizeMultiplier": 1
+				}
+			},
+			"tags": []
+		},
+		"4a41035e-9460-4b9c-9bda-b0aeb4838b8e": {
+			"name": "Particle System1",
+			"enabled": true,
+			"resource_id": "4a41035e-9460-4b9c-9bda-b0aeb4838b8e",
+			"parent": "3f9edfb8-de82-11e5-bd2e-22000ac481df",
+			"children": [],
+			"position": [0, 1.8, -30],
+			"rotation": [0, 0, 0],
+			"scale": [1, 1, 1],
+			"components": {
+				"particlesystem": {
+					"enabled": true,
+					"autoPlay": false,
+					"numParticles": 10,
+					"lifetime": 3,
+					"rate": 0.1,
+					"rate2": 0.1,
+					"startAngle": 0,
+					"startAngle2": 0,
+					"loop": true,
+					"preWarm": false,
+					"lighting": false,
+					"halfLambert": false,
+					"intensity": 1,
+					"depthWrite": false,
+					"depthSoftening": 0,
+					"sort": 0,
+					"blendType": 2,
+					"stretch": 0,
+					"alignToMotion": false,
+					"emitterShape": 0,
+					"emitterExtents": [3, 3, 3],
+					"emitterRadius": 0,
+					"initialVelocity": 0,
+					"animTilesX": 1,
+					"animTilesY": 1,
+					"animNumFrames": 1,
+					"animSpeed": 1,
+					"animLoop": true,
+					"wrap": false,
+					"wrapBounds": [3, 3, 3],
+					"colorMapAsset": 3682982,
+					"normalMapAsset": null,
+					"mesh": null,
+					"localVelocityGraph": {
+						"type": 1,
+						"keys": [
+							[0, 0],
+							[0, 0],
+							[0, 0]
+						],
+						"betweenCurves": false
+					},
+					"localVelocityGraph2": {
+						"type": 1,
+						"keys": [
+							[0, 0],
+							[0, 0],
+							[0, 0]
+						]
+					},
+					"velocityGraph": {
+						"type": 1,
+						"keys": [
+							[0, -0.012621491470901747],
+							[0, -0.012423472495321039],
+							[0, -0.012422743911112588]
+						],
+						"betweenCurves": true
+					},
+					"velocityGraph2": {
+						"type": 1,
+						"keys": [
+							[0, 0.016498330591427607],
+							[0, 0.013246591944265612],
+							[0, 0.012343529888742766]
+						]
+					},
+					"rotationSpeedGraph": {
+						"type": 1,
+						"keys": [0, 0],
+						"betweenCurves": false
+					},
+					"rotationSpeedGraph2": {
+						"type": 1,
+						"keys": [0, 0]
+					},
+					"scaleGraph": {
+						"type": 1,
+						"keys": [0, 0, 0.5046511627906977, 0.01736057939028241, 0.9930232558139535, 0],
+						"betweenCurves": true
+					},
+					"scaleGraph2": {
+						"type": 1,
+						"keys": [0, 0, 0.5023255813953489, 0.006774860249866309, 1, 0]
+					},
+					"colorGraph": {
+						"type": 1,
+						"keys": [
+							[0, 1],
+							[0, 1],
+							[0, 1]
+						],
+						"betweenCurves": false
+					},
+					"alphaGraph": {
+						"type": 1,
+						"keys": [0, 0, 0.5023255813953489, 0.98125, 1, 0],
+						"betweenCurves": false
+					},
+					"alphaGraph2": {
+						"type": 1,
+						"keys": [0, 0, 0.5023255813953489, 0.98125, 1, 0]
+					}
+				}
+			},
+			"tags": []
+		},
+		"fe9d7ef2-daea-4b89-a22c-393e20a2397a": {
+			"name": "Particle System2",
+			"enabled": true,
+			"resource_id": "fe9d7ef2-daea-4b89-a22c-393e20a2397a",
+			"parent": "3f9edfb8-de82-11e5-bd2e-22000ac481df",
+			"children": [],
+			"position": [0, 1.8, -30],
+			"rotation": [0, 0, 0],
+			"scale": [1, 1, 1],
+			"components": {
+				"particlesystem": {
+					"enabled": true,
+					"autoPlay": false,
+					"numParticles": 10,
+					"lifetime": 3,
+					"rate": 0.1,
+					"rate2": 0.1,
+					"startAngle": 0,
+					"startAngle2": 0,
+					"loop": true,
+					"preWarm": false,
+					"lighting": false,
+					"halfLambert": false,
+					"intensity": 1,
+					"depthWrite": false,
+					"depthSoftening": 0,
+					"sort": 0,
+					"blendType": 2,
+					"stretch": 0,
+					"alignToMotion": false,
+					"emitterShape": 0,
+					"emitterExtents": [4, 4, 4],
+					"emitterRadius": 0,
+					"initialVelocity": 0,
+					"animTilesX": 1,
+					"animTilesY": 1,
+					"animNumFrames": 1,
+					"animSpeed": 1,
+					"animLoop": true,
+					"wrap": false,
+					"wrapBounds": [3, 3, 3],
+					"colorMapAsset": 3682982,
+					"normalMapAsset": null,
+					"mesh": null,
+					"localVelocityGraph": {
+						"type": 1,
+						"keys": [
+							[0, 0],
+							[0, 0],
+							[0, 0]
+						],
+						"betweenCurves": false
+					},
+					"localVelocityGraph2": {
+						"type": 1,
+						"keys": [
+							[0, 0],
+							[0, 0],
+							[0, 0]
+						]
+					},
+					"velocityGraph": {
+						"type": 1,
+						"keys": [
+							[0, -0.012621491470901747],
+							[0, -0.012423472495321039],
+							[0, -0.012422743911112588]
+						],
+						"betweenCurves": true
+					},
+					"velocityGraph2": {
+						"type": 1,
+						"keys": [
+							[0, 0.016498330591427607],
+							[0, 0.013246591944265612],
+							[0, 0.012343529888742766]
+						]
+					},
+					"rotationSpeedGraph": {
+						"type": 1,
+						"keys": [0, 0],
+						"betweenCurves": false
+					},
+					"rotationSpeedGraph2": {
+						"type": 1,
+						"keys": [0, 0]
+					},
+					"scaleGraph": {
+						"type": 1,
+						"keys": [0, 0, 0.5069767441860465, 0.03434388521365345, 0.9930232558139535, 0],
+						"betweenCurves": true
+					},
+					"scaleGraph2": {
+						"type": 1,
+						"keys": [0, 0, 0.49767441860465117, 0.01052473901708735, 1, 0]
+					},
+					"colorGraph": {
+						"type": 1,
+						"keys": [
+							[0, 1],
+							[0, 1],
+							[0, 1]
+						],
+						"betweenCurves": false
+					},
+					"alphaGraph": {
+						"type": 1,
+						"keys": [0, 0, 0.5023255813953489, 0.98125, 1, 0],
+						"betweenCurves": false
+					},
+					"alphaGraph2": {
+						"type": 1,
+						"keys": [0, 0, 0.5023255813953489, 0.98125, 1, 0]
+					}
+				}
+			},
+			"tags": []
+		},
+		"f7b974af-ddbc-47dc-83d8-40cb69cd3713": {
+			"name": "Manager",
+			"tags": [],
+			"enabled": true,
+			"resource_id": "f7b974af-ddbc-47dc-83d8-40cb69cd3713",
+			"parent": "3f9eddb0-de82-11e5-bd2e-22000ac481df",
+			"children": [],
+			"position": [0, 0, 0],
+			"rotation": [0, 0, 0],
+			"scale": [1, 1, 1],
+			"components": {
+				"script": {
+					"enabled": true,
+					"scripts": [{
+						"url": "../assets/game/ellota/GameStateManager.js",
+						"name": "GameStateManager",
+						"attributes": {},
+						"attributesOrder": []
+					}, {
+						"url": "../assets/game/ellota/UIManager.js",
+						"name": "UIManager",
+						"attributes": {},
+						"attributesOrder": []
+					}, {
+						"url": "../assets/game/ellota/PlayerControl.js",
+						"name": "PlayerControl",
+						"attributes": {
+							"PerfectEffect": {
+								"name": "PerfectEffect",
+								"displayName": "PerfectEffect",
+								"defaultValue": null,
+								"value": "784b63fe-fc6d-456e-bf2f-a2f0b336d5ef",
+								"type": "entity",
+								"options": {}
+							},
+							"box1Mat": {
+								"name": "box1Mat",
+								"displayName": "box1Mat",
+								"defaultValue": [],
+								"value": 3636708,
+								"type": "asset",
+								"options": {
+									"max": 1,
+									"type": "material"
+								}
+							},
+							"box2Mat": {
+								"name": "box2Mat",
+								"displayName": "box2Mat",
+								"defaultValue": [],
+								"value": 3656159,
+								"type": "asset",
+								"options": {
+									"max": 1,
+									"type": "material"
+								}
+							}
+						},
+						"attributesOrder": ["PerfectEffect", "box1Mat", "box2Mat"]
+					}]
+				},
+				"sound": {
+					"enabled": true,
+					"volume": 1,
+					"pitch": 1,
+					"positional": false,
+					"refDistance": 1,
+					"maxDistance": 10000,
+					"rollOffFactor": 1,
+					"distanceModel": "linear",
+					"slots": {
+						"1": {
+							"name": "A",
+							"loop": false,
+							"autoPlay": false,
+							"overlap": false,
+							"asset": 3668296,
+							"startTime": 0,
+							"duration": null,
+							"volume": 1,
+							"pitch": 1
+						},
+						"2": {
+							"name": "B",
+							"loop": false,
+							"autoPlay": false,
+							"overlap": false,
+							"asset": 3668297,
+							"startTime": 0,
+							"duration": null,
+							"volume": 1,
+							"pitch": 1
+						},
+						"3": {
+							"name": "C",
+							"loop": false,
+							"autoPlay": false,
+							"overlap": false,
+							"asset": 3668298,
+							"startTime": 0,
+							"duration": null,
+							"volume": 1,
+							"pitch": 1
+						},
+						"4": {
+							"name": "D",
+							"loop": false,
+							"autoPlay": false,
+							"overlap": false,
+							"asset": 3668299,
+							"startTime": 0,
+							"duration": null,
+							"volume": 1,
+							"pitch": 1
+						},
+						"5": {
+							"name": "E",
+							"loop": false,
+							"autoPlay": false,
+							"overlap": false,
+							"asset": 3668300,
+							"startTime": 0,
+							"duration": null,
+							"volume": 1,
+							"pitch": 1
+						},
+						"6": {
+							"name": "F",
+							"loop": false,
+							"autoPlay": false,
+							"overlap": false,
+							"asset": 3668301,
+							"startTime": 0,
+							"duration": null,
+							"volume": 1,
+							"pitch": 1
+						},
+						"7": {
+							"name": "G",
+							"loop": false,
+							"autoPlay": false,
+							"overlap": false,
+							"asset": 3668302,
+							"startTime": 0,
+							"duration": null,
+							"volume": 1,
+							"pitch": 1
+						},
+						"8": {
+							"name": "H",
+							"loop": false,
+							"autoPlay": false,
+							"overlap": false,
+							"asset": 3702183,
+							"startTime": 0,
+							"duration": null,
+							"volume": 0.24,
+							"pitch": 1
+						},
+						"9": {
+							"name": "I",
+							"loop": false,
+							"autoPlay": false,
+							"overlap": false,
+							"asset": 3668303,
+							"startTime": 0,
+							"duration": null,
+							"volume": 0.66,
+							"pitch": 1
+						},
+						"10": {
+							"name": "J",
+							"loop": false,
+							"autoPlay": false,
+							"overlap": false,
+							"asset": 3668304,
+							"startTime": 0,
+							"duration": null,
+							"volume": 0.66,
+							"pitch": 1
+						},
+						"11": {
+							"name": "K",
+							"loop": false,
+							"autoPlay": false,
+							"overlap": false,
+							"asset": 3702184,
+							"startTime": 0,
+							"duration": null,
+							"volume": 0.2,
+							"pitch": 1
+						}
+					}
+				}
+			}
+		},
+		"3ffe1f57-8e45-457c-94e7-1ebcafea6840": {
+			"name": "prefab2",
+			"enabled": true,
+			"resource_id": "3ffe1f57-8e45-457c-94e7-1ebcafea6840",
+			"parent": "3f9eddb0-de82-11e5-bd2e-22000ac481df",
+			"children": [],
+			"position": [1000, 0, 0],
+			"rotation": [0, 0, 0],
+			"scale": [1, 1, 1],
+			"components": {
+				"script": {
+					"enabled": true,
+					"scripts": [{
+						"url": "../assets/game/ellota/ApplyGravity.js",
+						"name": "ApplyGravity",
+						"attributes": {},
+						"attributesOrder": []
+					}]
+				},
+				"model": {
+					"enabled": true,
+					"type": "box",
+					"asset": null,
+					"materialAsset": null,
+					"castShadows": false,
+					"castShadowsLightmap": false,
+					"receiveShadows": false
+				}
+			},
+			"tags": []
+		}
+	},
+	"id": 413890
+}

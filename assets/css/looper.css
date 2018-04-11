@@ -1,0 +1,79 @@
+#start:before,.icon-rank:before{
+	content: "";
+	
+}
+.icon.circle:before{
+	border:none;
+}
+#start{
+	background: url(../images/looper/looper_i1.png) no-repeat;
+	background-size: 100% auto;
+	width: 50%;
+    top: 60%;
+}
+.buttons .icon {
+    width: 60px;
+    height: 70px;
+}
+
+.buttons span {
+	display: none;
+}
+.icon-rank{
+	background: url(../images/looper/looper_i4.png) no-repeat;
+	background-size: 100% auto;
+}
+.icon-game{
+	background: url(../images/looper/looper_i3.png) no-repeat;
+	background-size: 100% auto;
+}
+.icon-shang{
+	background: url(../images/looper/looper_i5.png) no-repeat;
+	background-size: 100% auto;
+}
+
+
+
+#rankpanel{
+	background:#fff
+}
+#rankpanel .title{
+	background: url(../images/looper_r_bg.png) no-repeat;
+	background-size:  100% auto;
+}
+#rankpanel .list{
+	background: url(../images/looper_r_bg.png) no-repeat;
+	background-size:  100% auto;
+	background-position: 0 -60px;	
+}
+#rankpanel .myrank{
+	background: rgba(155,155,155,0.4);
+}
+#rankpanel .closebar{
+	background: rgba(20,20,20,0.3);
+}
+#rankpanel .list li.rank1, #rankpanel .list li.rank2, #rankpanel .list li.rank3 {
+    background-color: rgba(255,255,255,0.4);
+}
+
+
+
+/*设置*/
+
+.tipsSettings{
+	background:url(../images/looper/looper-s-bg2.png) no-repeat;
+	background-size: 100% 100%; 
+}
+.tipsSettings .thd{
+	background: rgba(40,40,40,0.5);
+	color:#fff;
+}
+.tipsSettings .tbd{
+	background-color: transparent;
+}
+.tipsSettings .tclose{
+	background: rgba(40,40,40,0.5);
+}
+.tipsSettings .item label.active:after{
+	background:#a9a9a9;
+}

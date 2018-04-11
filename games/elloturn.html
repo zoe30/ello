@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>企鹅の冒险</title>
+    <script>
+    document.documentElement.style.fontSize = window.innerWidth / 37.5 + 'px';
+    </script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/gamecomon.css">
+    <link rel="stylesheet" type="text/css" href="../assets/game/css/common.css?v=1">
+    <script src="../assets/game/js/playcanvas-stable.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script>
+        var isPrompt = '' == 'true'?true:false; //横屏游戏设置
+        var gameName = 'elloturn'
+        var CONFIG_FILENAME = "../assets/game/"+gameName+"/config.json";
+        var CANVAS_ID = 'application-canvas';
+        var canvas, devices, app, baseUrl = "../api/index.php/game/";
+        var sdwInfo = {"key" : '0922c47eed5045bd91823e83ffe6a9' , "id" : "1414877774" , "name" : "ELLOTURN"};
+        ASSET_PREFIX = "../assets/game/"+gameName+"/";
+        var setpath = "true" == 'true'?true:false ;
+        if(setpath){
+            SCENE_PATH = "../assets/game/"+gameName+"/438218.json";
+        }else{
+            SCENE_PATH = "438218.json";
+        }
+
+        CONTEXT_OPTIONS = {
+            'alpha': false,
+            'preserveDrawingBuffer': false
+        };
+        var legacy = 'true' == 'false'?false:true ;
+        if(legacy){
+            pc.script.legacy = true;
+
+        }else{
+            var strScript = '' ;
+            SCRIPTS = strScript.split(",");
+            pc.script.legacy = false;
+        }
+
+    </script>
+</head>
+
+<body ondblclick="return false;">
+<p id="score">0</p>
+<div id="rankpanel">
+    <div class="title">
+        <ul class="tabs">
+            <li class="weekRanks active">
+                <span class="tab_title">周排行</span>
+            </li>
+            <li class="allRanks">
+                <span class="tab_title">全国排行</span>
+            </li>
+        </ul>
+    </div>
+    <div class="list">
+        <div class="myrank">
+            <span class="rank">0</span>
+            <div class="pic">
+                <img src="" alt="">
+            </div>
+            <span class="name"></span>
+            <span class="weekdata"></span>
+            <span class="score">0</span>
+        </div>
+        <ol>
+        </ol>
+    </div>
+    <div class="loadding_box" hidden>
+        <div class="loading_n_box">
+            <img src="../assets/images/loading_03.png" class="xuanzhuang" alt="">
+            <br>
+            <img src="../assets/images/loading_07.png" class="loadding_text" alt="">
+        </div>
+    </div>
+    <div class="closebar">
+        <img src="../assets/images/icon-close.png" alt="">
+    </div>
+</div>
+    <div id="gamebox">
+
+
+        <div class="menuBox">
+            <div class="start" id="menu">
+                <ul class="buttons">
+                    <li class="btnGame"><a href="https://www.shandw.com/pc/?channel=10032"><i class="icon circle icon-game"></i><span>玩更多</span></a></li>
+                    <li class="btnRank screenBtn" data-target=".screenRanks"><i class="icon circle icon-rank"></i><span>排行榜</span></li>
+                    <li class="btnShang"><i class="icon circle icon-shang"><img src="../assets/images/share_icon.png"></i><span>分享下</span></li>
+
+                </ul>
+            </div>
+            <div class="col-2">
+                <div class="result">
+                    <p id="rank1">您奔跑的步数</p>
+                    <p id="gameScore">0</p>
+                    <p id="rank2"></p>
+                    <p id="rank3"></p>
+                    <img src="../assets/images/xuanyao.png" alt="" class="xuanyao" id="btnXY" hidden>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="btnSetting tipsBtn" data-target=".tipsSettings"><i class="icon icon-setting"></i></div>
+                <div id="uiend" class="retryButton">
+                    <i id="loadscene" class="icon circle icon-restart"></i>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        
+        <div class="bannerBox" id="banner">
+            <div class="longBanner">
+                <img src="https://www.shandw.com/h5/h5gameimg/XJWY11.jpg" alt="">
+            </div>
+            <div class="iTitle"><span>&nbsp;&nbsp;精品游戏推荐&nbsp;&nbsp;</span></div>
+            <ul class="command-list">
+                <li>
+                    <img src="https://www.shandw.com/h5/h5gameimg/TTDM02.png">
+                    <p class="name">天天打蘑菇</p>
+                </li>
+                <li>
+                    <img src="https://www.shandw.com/h5/h5gameimg/TTDM02.png">
+                    <p class="name">天天打蘑菇</p>
+
+                </li>
+                <li>
+                    <img src="https://www.shandw.com/h5/h5gameimg/TTDM02.png">
+                    <p class="name">天天打蘑菇</p>
+                </li>
+                <li>
+                    <img src="https://www.shandw.com/h5/h5gameimg/TTDM02.png">
+                    <p class="name">天天打蘑菇</p>
+                </li>
+
+            </ul>
+        </div>
+
+
+
+        <div class="logo">
+            <img src="../assets/game/elloturn/logo.png" alt="Logo">
+        </div>
+        <div id="uistart">
+            <i id="start" class="icon icon-play"></i>
+        </div>
+
+
+
+
+        <div class="tipsPanel tipsSettings">
+            <div class="thd">
+                游戏设定
+            </div>
+            <div class="tbd">
+                <div class="content">
+                    <div class="item itemOptimize">
+                        <div class="tipsword">
+                            <p>仅限安卓用户</p>
+                            <h3><i class="icon icon-roket"></i>性能优化</h3>
+                            <p>游戏体验卡顿时</p>
+                            <p>请建议开启优化</p>
+                        </div>
+                        <label class="optimize">关闭</label>
+                    </div>
+                    <div class="item itemMusic">
+                        <div class="tipsword">
+                            <h3><i class="icon icon-music"></i>游戏音乐</h3>
+                        </div>
+                        <label class="music active">开启</label>
+                    </div>
+                </div>
+                <div class="content intro">
+                    <img src="../assets/images/intro.png" alt="">
+                </div>
+            </div>
+            <div class="tclose">
+                <i class="icon icon-close"></i>
+            </div>
+        </div>
+        <div id="msgbox" class="tipsPanel tipsMsg"></div>
+        <div class="tip_img_box">
+            <img src="../assets/game/images/hp.png" alt="" class="show_hengping">
+            <img src="../assets/game/images/sp.png" alt="" class="show_shuping">
+        </div>
+
+        <div class="share_mask" onclick="hideMask()" hidden>
+            <div class="out_img">
+                <img src="../assets/images/sharegif.gif" alt="" class="share_img">
+                <p class="share_re">
+                    <img src="../assets/images/share_re_icon.png"> 发送到微信群或朋友
+                </p>
+            </div>
+        </div>
+        <div class="iosTip flex">
+            <p>IOS版本过低<br>
+                请更新至IOS8以上</p>
+            <img class="iosTipLogo" src="../assets/images/ios_tip_logo.png" alt="">
+        </div>
+    </div>
+    <script src="../assets/game/elloturn/__start__.js"></script>
+    <script src="../assets/game/elloturn/__loading__.js"></script>
+    <script type="text/javascript" src="https://www.shandw.com/libs/js/sdwJs.min.js"></script>
+    <script>
+    var userinfo = {},
+        gameid,
+        gamename = "Elloturn",
+        gameinfo = {
+            posturl: baseUrl + "/Index/recordScore/"
+        };
+    function getLink(){
+            var queryParam = getQuery() ;
+            var linkData = {
+                _sender_sdw_rfid_ : queryParam.uid || null,
+                channel:queryParam.channel|| '10000',
+                gid:queryParam.gid,
+            }
+            function toQuery (e) {
+                var t = "";
+                for (key in e)
+                    t += "&" + key + "=" + e[key];
+                return t.replace("&", "?")
+            }
+            function getQuery() {
+                    for (var e = location.href, t = /([^\?\=\&]+)\=([^\?\=\&]*)/g, n = {}; t.exec(e); )
+                        n[RegExp.$1] = RegExp.$2;
+                    return n
+                }
+            return 'https://www.shandw.com/v2/mobile/game/'+toQuery(linkData) ;
+        }
+
+    var shareInfo ={
+            link:getLink(),
+            title:'企鹅の冒险-火爆朋友圈的小游戏',
+            desc:'无需下载，即点即玩！火爆朋友圈的魔性小游戏，还有sei能超过我！',
+            imgUrl:'http://app.m3guo.com/h5/2016/h5gameimg/QEMX04.png'
+    };
+    function setGameoverShare(scoreinfo) {
+        var scorenum = parseInt($("#score").html());
+        if (scorenum > userinfo.topscore) {
+            userinfo.topscore = scorenum;
+            $("#rank2").html('我的天呐！<br>一不小心打破了自己的记录！');
+        } else {
+            $("#rank2").html('BEST: ' + userinfo.topscore);
+        }
+        shareInfo.title = '我在“企鹅の冒险”中获得'+scorenum+'分，超过了全国'+scoreinfo.index+'％的玩家，不服来战！';
+        sdw.onSetShareOperate(shareInfo)
+    }
+
+    function appStartHandle() {
+        $("#score").html(0);
+    }
+
+    function appBeginHandle() {
+        $("#score").html(0);
+    }
+
+    function appResetHandle() {
+        $("#score").html(0);
+        $("body").addClass("playing");
+    }
+    </script>
+<script type="text/javascript" src="../assets/game/js/gameapi.js?b7ae7f8eaacf9467f339"></script></body>
+
+</html>

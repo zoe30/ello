@@ -1,0 +1,22 @@
+//垂直方向居中
+.vcenter(){
+  transform: translateY(-50%);
+}
+
+.hcenter(){
+  transform: translateX(-50%);
+}
+
+.scenter(){
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.clearfix(){
+  *zoom:1;
+  &:after{
+    display: table;
+    line-height: 0;
+    content: "";
+    clear:both;
+  }
+}

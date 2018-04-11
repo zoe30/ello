@@ -1,0 +1,478 @@
+*,:after,:before{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	user-select: none;
+	-webkit-user-select: none;
+}
+html {
+	height: 100%;
+	background-color: #1d292c
+}
+body {
+	margin: 0;
+	max-height: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #1d292c;
+	font-family: Helvetica, arial, sans-serif;
+	position: relative;
+	width: 100%;
+	font-size: 1.2rem
+}
+#application-canvas {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0
+}
+#application-canvas.fill-mode-NONE {
+	margin: auto
+}
+#application-canvas.fill-mode-KEEP_ASPECT {
+	width: 100%;
+	height: auto;
+	margin: 0
+}
+#application-canvas.fill-mode-FILL_WINDOW {
+	width: 100%;
+	height: 100%;
+	margin: 0
+}
+canvas:focus {
+	outline: none
+}
+ul, ol, li, p {
+	margin: 0;
+	padding: 0
+}
+li {
+	list-style: none
+}
+a {
+	text-decoration: none
+}
+@font-face {
+	font-family: 'iconfont';
+	src: url('//at.alicdn.com/t/font_1465404841_3862844.eot');
+	src: url('//at.alicdn.com/t/font_1465404841_3862844.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1465404841_3862844.woff') format('woff'), url('//at.alicdn.com/t/font_1465404841_3862844.ttf') format('truetype'), url('//at.alicdn.com/t/font_1465404841_3862844.svg#iconfont') format('svg')
+}
+.iconfont {
+	font-family: "iconfont" !important;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: .2px;
+	-moz-osx-font-smoothing: grayscale
+}
+.icon {
+	font-family: "iconfont" !important;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: .2px;
+	-moz-osx-font-smoothing: grayscale
+}
+.icon:before {
+	display: inline-block;
+	vertical-align: middle
+}
+.icon.circle:before {
+	border: .2rem solid rgba(255, 255, 255, 0.65);
+	border-radius: 100%;
+	height: 1.4em;
+	width: 1.4em;
+	line-height: 1.5em;
+	text-align: center
+}
+.icon-play:before {
+	content: "\e608"
+}
+.icon-game:before {
+	content: "\e610"
+}
+.icon-rank:before {
+	content: "\e60f"
+}
+.icon-shang img{
+	width: 100%;
+}
+.icon-shang{
+	width: 44px;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+.icon-restart:before {
+	content: "\e611"
+}
+.icon-setting:before {
+	content: "\e615"
+}
+.icon-roket:before {
+	content: "\e60d"
+}
+.icon-music:before {
+	content: "\e60e"
+}
+.icon-close:before {
+	content: "\e60c"
+}
+.tipsPanel {
+	transform: translateX(-50%) translateY(-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: none;
+	border-radius: .8rem;
+	overflow: hidden
+}
+.tipsSettings {
+	width: 90%
+}
+.tipsSettings .thd {
+	height: 5rem;
+	background: #fcd006;
+	font-size: 2rem;
+	line-height: 5rem;
+	text-align: center
+}
+.tipsSettings .tbd {
+	padding: 1rem 2.5rem;
+	background: #fff
+}
+.tipsSettings .content {
+	padding: .5rem 0;
+	border-bottom: .2rem solid #eee
+}
+.tipsSettings .content:last-child {
+	border: none
+}
+.tipsSettings .item {
+	*zoom: 1;
+	margin: 1.5rem 0 3rem
+}
+.tipsSettings .item:after {
+	display: table;
+	line-height: 0;
+	content: "";
+	clear: both
+}
+.tipsSettings .item .tipsword, .tipsSettings .item .tips {
+	float: left;
+	padding-left: 3.5rem
+}
+.tipsSettings .item h3 {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-size: 1.8rem;
+	line-height: 2.5rem
+}
+.tipsSettings .item h3 .icon {
+	position: absolute;
+	top: .2rem;
+	left: -2.7rem;
+	font-size: 2.2rem;
+	line-height: 2.2rem
+}
+.tipsSettings .item p {
+	font-size: 1rem;
+	line-height: 1.4rem;
+	color: #858685
+}
+.tipsSettings .item label {
+	position: relative;
+	float: right;
+	margin-top: -0.6rem;
+	font-size: 1.4rem
+}
+.tipsSettings .item label:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: middle;
+	content: "";
+	height: 3rem;
+	width: 6rem;
+	margin-right: .7rem;
+	background: #f4f4f4;
+	border: .1rem solid #e4e3e3;
+	border-radius: 3rem
+}
+.tipsSettings .item label:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	vertical-align: middle;
+	content: "";
+	height: 3rem;
+	width: 3rem;
+	background: #fff;
+	border: .1rem solid #e4e3e3;
+	border-radius: 3rem;
+	transition: all .3s
+}
+.tipsSettings .item label.active:after {
+	top: .1rem;
+	left: 3rem;
+	height: 2.8rem;
+	width: 2.8rem;
+	background: #fcd006;
+	border: .2rem solid #fff
+}
+.tipsSettings .itemOptimize .tipsword, .tipsSettings .itemOptimize .tips {
+	margin-top: -1.4rem
+}
+.tipsSettings .intro {
+	padding: 2rem 0;
+	text-align: center
+}
+.tipsSettings .intro img {
+	width: 96%
+}
+.tipsSettings .copyright {
+	text-align: center;
+	font-size: .9rem;
+	color: #9c9d9c
+}
+.tipsSettings .tclose {
+	background: #fcd006;
+	text-align: center;
+	font-size: 2.5rem;
+	line-height: 4rem
+}
+.screenPanel {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	overflow: hidden
+}
+.screenPanel {
+	-webkit-overflow-scrolling: touch;
+	overflow-y: scroll
+}
+.screenPanel .shd {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	background: #fcd006;
+	height: 6rem
+}
+.screenPanel .shd .item {
+	float: left;
+	width: 50%;
+	height: 5.5rem;
+	line-height: 5.5rem;
+	border-bottom: .5rem solid #fcd006;
+	font-size: 1.8rem;
+	text-align: center
+}
+.screenPanel .shd .item.active {
+	border-color: #272735
+}
+.screenPanel .sbd {
+	-webkit-overflow-scrolling: touch;
+	overflow-y: scroll;
+	padding: 6rem 0
+}
+.screenPanel .sclose {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #fcd006;
+	text-align: center;
+	font-size: 3rem;
+	line-height: 5rem;
+	color: #272735
+}
+.screenPanel ol {
+	display: table;
+	width: 100%
+}
+.screenPanel ol li {
+	display: table-row;
+	background: #e7ebeb
+}
+.screenPanel ol .rank, .screenPanel ol .pic, .screenPanel ol .name, .screenPanel ol .score {
+	display: table-cell;
+	font-size: 100%;
+	padding: 10px;
+	vertical-align: middle;
+	color: #685a4c
+}
+.screenPanel ol .rank {
+	width: 1.4em;
+	font-size: 1.4rem;
+	font-style: italic
+}
+.screenPanel ol .score {
+	text-align: right;
+	font-size: 1.8rem
+}
+.screenPanel ol .pic {
+	position: relative;
+	width: 5rem;
+	padding: 10px 0
+}
+.screenPanel ol .pic img {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 4rem;
+	border: 4px solid #fff
+}
+.screenPanel ol .rank1, .screenPanel ol .rank2, .screenPanel ol .rank3 {
+	background: #fff;
+	border-bottom: 2px solid #e7ebeb
+}
+.screenPanel ol .rank1 img, .screenPanel ol .rank2 img, .screenPanel ol .rank3 img {
+	border-color: #e7ebeb
+}
+.screenPanel ol .rank1 .pic:after {
+	content: "";
+	background: url("http://cdncase.ileou.com/ecms/Tpl/Home/Ellota/img/iconone.png") no-repeat center;
+	-wt-background-size: cover;
+	background-size: 100% auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1.8em;
+	height: 1.8em;
+	transform: rotate(-5deg)
+}
+.logo {
+	position: absolute;
+	left: 15%;
+	top: 20%;
+	width: 70%
+}
+.logo img {
+	width: 100%
+}
+#start {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%);
+	font-size: 10rem;
+	line-height: 10rem;
+	color: #fff
+}
+#uiend {
+	display: none
+}
+.buttons {
+	position: absolute;
+	bottom: 3rem;
+	width: 100%;
+	height: auto;
+	text-align: center
+}
+.buttons li {
+	display: inline-block;
+	margin-left: 6.6rem
+}
+.buttons li:first-child {
+	margin-left: 0
+}
+.buttons i, .buttons span {
+	display: block;
+	color: #fff
+}
+.buttons .icon {
+	font-size: 2.5rem
+}
+.buttons span {
+	line-height: 2em
+}
+.buttons.ended {
+	width: auto;
+	left: 2.5rem
+}
+.buttons.ended li {
+	display: block;
+	margin: 1.5rem 0 0 !important
+}
+.buttons .btnSetting {
+	position: fixed;
+	top: 1.5rem;
+	right: 2rem;
+	font-size: 3rem
+}
+#loadscene {
+	position: absolute;
+	right: 2.5rem;
+	bottom: 4.2rem;
+	color: #fff;
+	font-size: 3rem
+}
+.result {
+	display: none;
+	position: absolute;
+	top: 6rem;
+	left: 0;
+	width: 100%;
+	color: #fff;
+	text-align: center
+}
+.result #rank1, .result #rank2, .result #rank3 {
+	opacity: 1;
+	transition: all .3s
+}
+.playing .result {
+	display: block
+}
+.playing #start {
+	display: none
+}
+.playing #rank1, .playing #rank2, .playing #rank3 {
+	opacity: 0
+}
+#rank1 {
+	font-size: 1.8rem;
+	line-height: 2rem
+}
+#score {
+	margin-top: .5rem;
+	font-size: 4rem;
+	line-height: 4.5rem
+}
+#rank2 {
+	font-size: 1.4rem;
+	line-height: 2rem
+}
+.modal{
+	width: 70%;
+	text-align: center;
+	/*height: 100%;*/
+	background: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	left: 50%;top: 50%;
+	transform: translate3d(-50%,-50%,0);
+	-webkit-transform: translate3d(-50%,-50%,0);
+	padding: 1.5rem 2rem 5rem;
+	font-size: 1.4rem;
+	line-height: 1.7em;
+	border-radius: 5px;
+	color: #fff;
+	z-index: 22;
+}
+.modal .goCompetition{
+	color: #23c9b6;
+	width: 10rem;
+	border-radius: 3.5rem;
+	border:1px solid #eee;
+	position:absolute ;
+	left: 50%;
+	bottom: 1.5rem;
+	transform: translate3d(-50%,0,0);
+	-webkit-transform: translate3d(-50%,0,0);
+}

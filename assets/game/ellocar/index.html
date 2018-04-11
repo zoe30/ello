@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <title>ElloCar - ElloGame</title>
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth/37.5 + 'px';
+    </script>
+    <link rel="stylesheet" type="text/css" href="{:C('ASSET_INDEX')}/ecms/Tpl/Game/Index/css/gamecomon.css">
+    <link rel="stylesheet" type="text/css" href="{:C('ASSET_INDEX')}/assets/game/css/common.css">
+    <script src="http://cdncase.ileou.com/assets/game/ellocar/playcanvas-stable.min.js"></script>
+    <script src="http://cdncase.ileou.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+		var CONFIG_FILENAME = "http://cdncase.ileou.com/assets/game/ellocar/config.json";
+        var CANVAS_ID = 'application-canvas';
+        var canvas, devices, app,baseUrl="{:C('HTML_INDEX')}";
+        ASSET_PREFIX = "";
+        SCENE_PATH = "http://cdncase.ileou.com/assets/game/ellocar/444338.json";
+        CONTEXT_OPTIONS = {
+            'alpha': false,
+            'preserveDrawingBuffer': false
+        };
+        SCRIPTS = [ 4596245, 4596315, 4596244, 4596323, 4596591, 4596643, 4597150, 4597178, 4599912, 4628983 ];
+        pc.script.legacy = false;
+    </script>
+</head>
+<body ondblclick="return false;">
+<div id="gamebox">
+    <div class="logo">
+        <img src="http://cdncase.ileou.com/assets/game/ellojump2/img/logo.png" alt="Logo">
+    </div>
+
+    <include file="./include/game/gameui.html" />
+
+    <include file="./include/game/buttons.html" />
+
+    <div class="result">
+        <p id = "rank1" >您跳跃的层数</p>
+        <p id = "score">0</p>
+        <p id="rank2"></p>
+        <p id="rank3"></p>
+    </div>
+    <include file="./include/game/tips.html" />
+    <include file="./include/game/screen.html" />
+</div>
+<script src="http://cdncase.ileou.com/assets/game/ellocar/__start__.js"></script>
+<script src="http://cdncase.ileou.com/assets/game/ellocar/__loading__.js"></script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+<script>
+    var userinfo={
+                id : '{$userInfo.id|default="0"}',
+                name: '{$userInfo.nickname|default="error"}',
+                topscore: '{$userInfo.topscore|default="0"}',
+                status: '{$userInfo.status|default="-3"}'
+            },
+            gameid= '{$game.id|default="0"}',
+            gameinfo={
+                // friendranksurl: "{:C('HTML_INDEX')}/Play/ellocar/getFriendsRanks/userid/"+userinfo.id,
+                // allranksurl: "{:C('HTML_INDEX')}/Play/ellocar/getrank/isajax/1",
+                // posturl: "{:C('HTML_INDEX')}/Play/ellocar/recordScore"
+                friendranksurl: "{:C('HTML_INDEX')}/Game/Index/getFriendsRanks/gameid/"+gameid+"/userid/"+userinfo.id,
+                allranksurl: "{:C('HTML_INDEX')}/Game/Index/getrank/gameid/"+gameid+"isajax/1",
+                posturl: "{:C('HTML_INDEX')}/Game/Index/recordScore/"
+            },
+            // {:C('SHARE_INDEX')}/Home
+            shareobj = {
+                'title': "ElloJump2.0 - ElloGame ",
+                'desc': "ElloJump2.0 周赛开始啦！ - 秒杀手残党的蹦蹦跳游戏，看看懵逼的你能蹦跶多少下。",
+                'link': "{:C('HTML_INDEX')}/Play/ellocar?inviteid="+userinfo.id+"&invitegame="+gameid,
+                'pyqlink': "{:C('HTML_INDEX')}/Play/ellocar?inviteid="+userinfo.id+"&invitegame="+gameid,
+                'imgUrl': "http://cdncase.ileou.com/assets/game/ellocar/icon.jpg"
+            },
+            posturl=gameinfo.posturl;
+
+    function setGameoverShare(scoreinfo){
+        var scorenum=parseInt($("#score").html());
+        shareobj.title='ElloJump2.0周赛开始啦！我蹦跶了'+scorenum+'下，你能超过我吗？';
+        //判断最高分方案
+        if(scorenum > userinfo.topscore){
+            userinfo.topscore = scorenum;
+            shareobj.desc='我的天呐！我一不小心打破了自己的记录！';
+            $("#rank2").html('我的天呐！<br>一不小心打破了自己的记录！');
+        }else{
+            $("#rank2").html('BEST: '+userinfo.topscore);
+        }
+        console.log(shareobj);
+        setsharemsg();
+    }
+
+    function appStartHandle(){
+        $("#score").html(0);
+        console.log("star");
+    }
+
+    function appBeginHandle(){
+        $("#score").html(0);
+    }
+
+    function appResetHandle(){
+        $("#score").html(0);
+        $("body").addClass("playing");
+    }
+</script>
+<script src="{:C('ASSET_INDEX')}/assets/game/js/gameapi.js" type="text/javascript"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?7bc6efdf31e34cb2a93cd22310d33394";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

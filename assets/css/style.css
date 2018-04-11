@@ -1,0 +1,679 @@
+html, body, div, ul, li, ol, a, input, textarea, p, dl, dt, dd, h4, h5, h6, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: #f5f5f5;
+    position: relative;
+    font-family: '微软雅黑';
+    max-width: 640px;
+    margin: auto;
+}
+
+a, input, img, textarea, span, div {
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+/*首页页头*/
+header {
+    width: 100%;
+    height: 60px;
+    background: #ececea;
+    border-bottom: 1px solid #ddd;
+}
+
+.header {
+    margin: 0 20px;
+    color: #f5f5f5;
+    font-size: 1em;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+
+}
+
+.logo {
+    float: left;
+    height: 100%;
+}
+
+.logo img {
+    width: 50px;
+    float: left;
+    vertical-align: middle;
+    line-height: 45px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
+
+.logo p {
+    font-size: 14px;
+    float: left;
+    color: #000;
+    margin-left: 8px;
+}
+
+.hadshouquan img{
+    box-sizing: border-box;
+    border: 4px solid #ddd;
+}
+.header-img {
+    float: right;
+}
+
+.header-img img {
+    width: 50px;
+    float: left;
+    vertical-align: middle;
+    line-height: 45px;
+    margin-top: 10px;
+}
+
+/*首页banner轮播*/
+.swiper-container {
+    width: 100%;
+    height: 140px;
+}
+
+.swiper-container .swiper-slide {
+    height: 140px;
+    line-height: 140px;
+}
+.swiper-container .swiper-slide img{
+    width:100%;
+}
+
+/*首页游戏列表*/
+.games-all {
+    margin-top: 7px;
+    border-top: 1px solid #e8e8e8;
+    padding: 0px 5px;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    width:100%
+}
+
+.games-all a{
+    color: #aaa;
+}
+
+.games-all .shense{
+    color: #555;
+}
+
+.games-list {
+    width: 33.0%;
+    /*height: 150px;*/
+    border-bottom: 1px solid #e8e8e8;
+    position: relative;
+    margin: auto;
+}
+
+.games-list:nth-child(3n+1),
+.games-list:nth-child(3n+2){
+    border-right: 1px solid #e8e8e8;
+}
+.games-list:last-child{
+    border-left: 1px solid #e8e8e8;
+}
+
+.games-list a{
+    display: block;
+}
+
+.game-img, .game-txt1 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.game-txt1 a img {
+    width: 50%;
+    height: auto;
+}
+.game-txt1  img {
+    /*width: 50%;*/
+    height: 14px;
+}
+
+.game-txt11  img {
+    width: 50%;
+    height: auto;
+}
+
+
+.game-txt2 {
+    text-align: center;
+    margin: 10px auto;
+    color: #888;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.game-txt2 img {
+    height: 17px;
+}
+
+.game-img img {
+    width: 50%;
+    height: auto;
+    margin-top: 8px;
+}
+
+.games-more {
+    width: 33.0%;
+    border-bottom: 1px solid #e8e8e8;
+    position: relative;
+    float: left;
+}
+
+.games-more-img {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.games-more-img img {
+    width: 50%;
+    /*margin: 50px 0;*/
+}
+
+.games-list-new img, .games-list-hot img {
+    position: absolute;
+    top: -4px;
+    left: -2px;
+    width: 32%;
+}
+
+/*切换按钮*/
+.tabs {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.tabs .tab {
+    overflow: hidden;
+    background: #fcd006;
+}
+
+.tabs .tab a {
+    width: 50%;
+    display: block;
+    padding: 14px 0;
+    float: left;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    font-family: '微軟正黑體';
+    font-size: 20px;
+}
+
+.tabs .tab a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.tabs .tab a.on {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 5px solid #494949
+}
+
+.tabs .content {
+    overflow: hidden;
+}
+
+
+
+/*排行榜列表*/
+.q_rank{
+    display: none;
+}
+.sort_box {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.sort_list {
+    padding: 5px 0 5px 125px;
+    position: relative;
+    height: 65px;
+    line-height: 65px;
+    border-bottom: 1px solid #e6eaea;
+    background-color: #e7ebeb;
+}
+.sort_list:nth-child(1),
+.sort_list:nth-child(2),
+.sort_list:nth-child(3){
+    background-color:#fff; 
+}
+ul.sort_box .sort_list:nth-child(1):before{
+    content:'';
+    width: 36px;
+    height:30px; 
+    position: absolute;
+    top:0;
+    left: 43px;
+    background: url(../images/king.png) no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.sort_list .num_logo, .sort_list1 .num_logo {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #e7ebeb;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 45px;
+}
+
+.sort_list .num_logo img, .sort_list1 .num_logo img {
+    width: 50px;
+}
+
+.sort_list .num_king {
+    overflow: hidden;
+    position: absolute;
+    top: -10px;
+    left: 40px;
+}
+
+.sort_list .num_king img {
+    width: 40px;
+}
+
+.sort_list .num_name, .sort_list1 .num_name {
+    color: #000;
+}
+
+.sort_list .num, .sort_list1 .num {
+    font-style: italic;
+    color: #000;
+    position: absolute;
+    left: 0;
+    width: 45px;
+    text-align: center;
+}
+
+.sort_list .num_sort, .sort_list1 .num_sort {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
+.num_sort a {
+    font-size: 16px;
+    color: #000;
+}
+
+/*添加好友*/
+.sort_letter {
+    height: 45px;
+    line-height: 45px;
+    padding-left: 20px;
+    color: #787878;
+    font-size: 14px;
+    position: relative;
+}
+
+.sort_letter .fri_logo {
+    width: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 7px;
+    left: 10px;
+}
+
+.sort_letter .fri_logo img {
+    width: 25px;
+}
+
+.sort_letter .fri_name {
+    color: #000;
+    position: relative;
+    padding-left: 2em;
+    font-size: 14px;
+}
+
+.sort_letter .fri_add {
+    position: absolute;
+    top: 0px;
+    right: 1em;
+}
+
+.sort_letter .fri_add a {
+    color: #000;
+}
+
+.sort_letter .fri_add img {
+    width: 25px;
+    vertical-align: middle;
+}
+
+.sort_letter1 {
+    height: 15px;
+    line-height: 15px;
+    padding-left: 20px;
+    color: #787878;
+    font-size: 14px;
+    position: relative;
+}
+
+/*添加好友提示框*/
+#out {
+    position: absolute;
+    top: 0px;
+    filter: alpha(opacity=80);
+    background-color: #000;
+    z-index: 1002;
+    left: 0px;
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+}
+
+.out_img img {
+    width: 95%;
+    display: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*页脚*/
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 53px;
+    background: #fcd006;
+    clear: both;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#footer img {
+    width: 30px;
+    margin-top: 10px;
+}
+
+/*打赏界面*/
+.reward-header {
+    height: 71px;
+    width: 100%;
+    background-color: #fcd006;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.reward-header h1 {
+    padding-top: 15px;
+    font-size: 22px;
+}
+
+.reward-header p {
+    font-size: 13px;
+}
+
+.reward-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reward-content {
+    overflow: hidden;
+}
+
+.reward-list1 {
+    width: 90px;
+    float: left;
+    margin-left: 15%;
+    position: relative;
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+    margin-top: 17px;
+}
+
+.reward-list2 {
+    width: 90px;
+    float: right;
+    margin-right: 15%;
+    position: relative;
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+    margin-top: 17px;
+}
+
+@media (max-width:320px)  {
+    .reward-list1 {
+        width: 90px;
+        float: left;
+        margin-left: 10%;
+        position: relative;
+        border: 1px solid #e7e7e7;
+        border-radius: 10px;
+        margin-top: 17px;
+    }
+
+    .reward-list2 {
+        width: 90px;
+        float: right;
+        margin-right: 10%;
+        position: relative;
+        border: 1px solid #e7e7e7;
+        border-radius: 10px;
+        margin-top: 17px;
+    }
+}
+
+.reward-txt img {
+    width: 73px;
+    margin-top: 50px;
+}
+
+.reward-img {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.reward-img img {
+    width: 53px;
+}
+
+.reward-line {
+    width: 100%;
+    position: relative;
+    padding-top: 30px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #e7e7e7;
+}
+
+.line-txt {
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+    top: 20px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.line-txt a {
+    background-color: #fff;
+    text-align: center;
+    color: #e7e7e7;
+    padding: 0 5px;
+}
+/*打赏列表*/
+.reward-bottom{
+    height: 25%;
+    margin: 1rem 0 1rem;
+    width: 100%;
+    overflow-y:scroll;
+}
+.reward-bottom ul{
+    list-style: none;
+    padding :0 1rem;
+}
+.reward-bottom ul li{
+    margin-left: 3px;
+    float: left;
+}
+.reward-bottom ul li img{
+    width: 30px;
+}
+
+/*还想要钱*/
+.footer-waring{
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    width: 176px;
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin-left: -88px;
+}
+.footer-waring a{
+    text-align: center;
+    color: #fff;
+}
+
+
+#reward-out{
+    display: none;
+    border-radius: 10px;
+    background-color: #fcd006;
+    position: absolute;
+    top: 80px;
+    z-index: 1002;
+    left: 30px;
+    right: 30px;
+    height: 258px;
+    padding-top: 30px;
+}
+.reward_img,.reward-ok{
+    margin: 0 auto;
+    text-align: center;
+}
+.reward_img img {
+    width: 85%;
+}
+.reward-ok img{
+    width: 40%;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.content{
+    min-height: calc(100% - 110px);
+    position: relative;
+    padding-bottom: 50px;
+}
+.loadding_box{
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    top:0;
+    bottom: 0;
+}
+.loading_n_box{
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    top:40%;
+    text-align: center;
+}
+.xuanzhuang{
+width:30px;
+-webkit-animation:xuanzhuang 2s linear infinite;
+animation:xuanzhuang 2s linear infinite;
+}
+@keyframes xuanzhuang{
+    from{
+        transform:rotate(0);
+    }
+    to{
+         transform:rotate(360deg);
+    } 
+}
+
+@-webkit-keyframes xuanzhuang{
+    from{
+        -webkit-transform:rotate(0);
+    }
+    to{
+        -webkit-transform:rotate(360deg);
+    } 
+}
+
+.loadding_text{
+    width:70px;
+}
+
+
+
+.qrcodePage{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 100;
+    width: 74%;
+    transform: translateY(-50%);
+    margin-left: 13%;
+    height: calc(100% - 190px);
+    background: #fff;
+    border-radius: 10px;
+}
+.qrcodePage img{
+position: absolute;
+    top: 47%;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.qrcodePage .close{position: absolute;bottom:8%;left:50%;font-size:3em;transform:translateX(-50%);color:#95959c;
+    width: 52px;
+    height: 46px;
+    background:url(../images/close.png) no-repeat;
+    background-size: 100% 100%; 
+}
+
+

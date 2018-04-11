@@ -1,0 +1,685 @@
+html {
+    height: 100%;
+    background-color: #1d292c;
+}
+body {
+    margin: 0;
+    max-height: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #1d292c;
+    font-family: Helvetica, arial, sans-serif;
+    position: relative;
+    width: 100%;
+}
+div,h1,p,img,ul,li{
+    padding:0;
+    margin: 0
+}
+#application-canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#application-canvas.fill-mode-NONE {
+    margin: auto;
+}
+#application-canvas.fill-mode-KEEP_ASPECT {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+#application-canvas.fill-mode-FILL_WINDOW {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+canvas:focus {
+    outline: none;
+}
+#sound {
+    display: none;
+}
+#fps {
+    display: none;
+}
+#start {
+    position: absolute;
+    left: 38%;
+    top: 60%;
+    width: 24%;
+    height: auto;
+}
+#uiend {
+    display: none;
+}
+#title {
+    position: absolute;
+    left: 15%;
+    top: 20%;
+    width: 70%;
+    height: auto;
+}
+#score {
+    position: absolute;
+    width: 100%;
+    top: 8%;
+    color: #ffffff;
+    font-size: 60px;
+    font-family: initial;
+    text-align: center;
+    display: none;
+}
+#infopage {
+    display: none;
+}
+#infocontent {
+    position: absolute;
+    left: 7%;
+    top: 10%;
+    width: 86%;
+    height: auto;
+}
+#return {
+    position: absolute;
+    left: 80%;
+    top: 88%;
+    width: 9%;
+    height: auto;
+}
+#share {
+    position: absolute;
+    left: 17%;
+    top: 0;
+    width: 80%;
+    height: auto;
+}
+@media screen and (max-width:320px) {
+    #score {
+        font-size: 3.3em;
+    }
+}
+
+/**
+ 排行榜
+ */
+a {
+    text-decoration: none;
+}
+#rankpanel .tabs {
+    margin: 0
+}
+#btnrank {
+    position: absolute;
+    left: 86.5%;
+    top: 82%;
+    width: 9.5%;
+    height: auto;
+}
+#rankpanel {
+    display: none;
+    position: absolute;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+#rankpanel .title {
+    width: 100%;
+    height: 60px;
+    background: #fcd006;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+}
+#rankpanel .tabs {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+#rankpanel .tabs li {
+    color: #fff;
+    width: 50%;
+    float: left;
+    line-height: 55px;
+    height: 55px;
+    text-align: center;
+    border: none;
+    font-size: 128%;
+    display: inline-block;
+    vertical-align: top;
+}
+#rankpanel .tabs .current {
+    border-bottom: 5px solid #494949;
+}
+#rankpanel .logo {
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    padding: 15px;
+}
+#rankpanel .logo img {
+    height: 100%;
+    width: auto;
+}
+#rankpanel .title .rank {
+    float: right;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 200%;
+    color: #685a4c;
+}
+#rankpanel .list {
+    margin-top: 60px;
+    height: calc(100% - 110px);
+    position: relative;
+    padding-bottom: 50px;
+    overflow: scroll;
+}
+#rankpanel .myrank {
+    display: table;
+    width: 100%;
+    background: #fff;
+}
+#rankpanel ol {
+    display: table;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#rankpanel .list li {
+    display: table-row;
+    border-bottom: 1px solid #ccc;
+    background-color: #f5f5f5;
+}
+#rankpanel .list li.rank1,#rankpanel .list li.rank2,#rankpanel .list li.rank3{
+     background-color: #fff;
+}
+#rankpanel li span{
+background-color: #f5f5f5;
+}
+#rankpanel .rank, #rankpanel .pic, #rankpanel .name, #rankpanel .score {
+    display: table-cell;
+    font-size: 100%;
+    padding: 10px 0;
+    vertical-align: middle;
+    text-align: center;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e7ebeb;
+    color: #685a4c;
+}
+#rankpanel .list .rank {
+    width: 2em;
+    font-style: italic;
+}
+#rankpanel .myrank .rank {
+    margin-left: 1em;
+}
+#rankpanel .pic {
+    width: 3.3em;
+    position: relative;
+}
+#rankpanel .pic img {
+    width: 2.4em;
+    height: 2.4em;
+    border-radius: 10em;
+    border: 5px solid #e7ebeb;
+}
+#rankpanel .myrank img {
+    border-color: #F3CA22;
+}
+#rankpanel .name {
+    text-align: left;
+    padding-left: 1em;
+}
+#rankpanel .score {
+    font-size: 130%;
+}
+
+#rankpanel li.rank1, #rankpanel .myrank {
+    font-size: 110%;
+}
+#rankpanel li.rank1 span, #rankpanel li.rank1 .pic, #rankpanel li.rank2 span, #rankpanel li.rank2 .pic, #rankpanel li.rank3 span, #rankpanel li.rank3 .pic {
+    background: #fff;
+}
+#rankpanel li.rank1 .pic:after {
+    content: "";
+    background: url("/ello/ecms/Tpl/Game/Index/images/king.png") no-repeat center;
+    -wt-background-size: cover;
+    background-size: 100% auto;
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    width: 1.8em;
+    height: 1.8em;
+    transform: rotate(-5deg);
+}
+#rankpanel li.rank1 .pic img, #rankpanel .myrank .pic img {
+    width: 2.6em;
+    height: 2.6em;
+}
+#rankpanel .score{
+    padding-right:10px;
+}
+
+/*添加好友*/
+.sort_letter {
+    height: 45px;
+    line-height: 45px;
+    padding-left: 20px;
+    color: #787878;
+    font-size: 14px;
+    position: relative;
+}
+.sort_letter .fri_logo {
+    width: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 7px;
+    left: 10px;
+}
+.sort_letter .fri_logo img {
+    width: 25px;
+}
+.sort_letter .fri_name {
+    color: #000;
+    position: relative;
+    padding-left: 2em;
+    font-size: 14px;
+}
+.sort_letter .fri_add {
+    position: absolute;
+    top: 0px;
+    right: 1em;
+}
+.sort_letter .fri_add a {
+    color: #000;
+}
+.sort_letter .fri_add img {
+    width: 25px;
+    vertical-align: middle;
+}
+.sort_letter {
+    background: #f5f5f5
+}
+.loadding_box {
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    top: 0;
+    bottom: 0;
+}
+.loading_n_box {
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    top: 40%;
+    text-align: center;
+}
+.xuanzhuang {
+    width: 30px;
+    -webkit-animation: xuanzhuang 2s linear infinite;
+    animation: xuanzhuang 2s linear infinite;
+}
+@keyframes xuanzhuang {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes xuanzhuang {
+    from {
+        -webkit-transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+.loadding_text {
+    width: 70px;
+}
+
+
+/*分享好友提示*/
+.share_mask {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    filter: alpha(opacity=80);
+    background-color: #000;
+    z-index: 1002;
+    left: 0px;
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+}
+.out_img{
+    height: 500px;
+    text-align: center;
+}
+
+.out_img img {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+/*
+#rankpanel li.rank2 .rank,
+#rankpanel li.rank2 .pic,
+#rankpanel li.rank2 .name,
+#rankpanel li.rank2 .score,
+#rankpanel li.rank2 .rank,
+#rankpanel li.rank2 .pic,
+#rankpanel li.rank2 .name,
+#rankpanel li.rank2 .score{
+
+}*/
+#rankpanel li.loading {
+    height: 500%;
+    line-height: 500%;
+    text-align: center;
+}
+.tips {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.tips.scenter {
+    width: 80%;
+    height: auto;
+    padding: 1em;
+    text-align: center;
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    border-radius: 1em;
+    box-sizing: border-box;
+}
+.tipsPK img {
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    width: 60%;
+}
+.scenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.closebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 300;
+    text-align: center;
+    height: 2.1em;
+    width: 100%;
+    padding: 1em 0;
+    background: #F3CA22;
+}
+.closebar img {
+    height: 100%;
+    width: auto;
+}
+
+/**
+底部导航
+*/
+#info, #btnrank, #btn-game {
+    position: absolute;
+    top: 86%;
+    width: 13%;
+    height: auto;
+}
+#info {
+    left: 72%;
+}
+#btnrank {
+    left: 43.5%;
+}
+#btn-game {
+    left: 15.5%;
+}
+.ended {
+    position: absolute;
+    left: 6%;
+    bottom: 6%;
+    width: 13%;
+}
+.ended #info, .ended #btnrank, .ended #btn-game {
+    position: static;
+    width: 100%;
+    margin-top: 1em;
+}
+#loadscene {
+    position: absolute;
+    right: 6%;
+    bottom: 6%;
+    width: 13%;
+    height: auto;
+}
+#rank1 {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 100%;
+}
+#rank2 {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 100%;
+    line-height: 170%;
+}
+#rank3 {
+    display: none;
+}
+.result {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 10%;
+}
+.result #score, .result #rank1, .result #rank2, .result #rank3 {
+    position: relative;
+    top: auto;
+    margin: 0;
+}
+.result #score {
+    margin: .3em 0 0;
+}
+#start {
+    position: absolute;
+    left: 38%;
+    top: 60%;
+    width: 24%;
+    height: auto;
+}
+
+/* help */
+#helppage .help {
+    display: none;
+    width: 66%;
+    height: auto;
+}
+#helppage .help img {
+    width: 100%;
+}
+#btn_help {
+    position: absolute;
+    right: 6%;
+    top: 6%;
+    width: 10%;
+}
+#msgbox .item {
+    margin: .5em 0;
+}
+
+
+/*打赏界面*/
+.reward-header {
+    height: 71px;
+    width: 100%;
+    background-color: #fcd006;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.reward-header h1 {
+    padding-top: 15px;
+    font-size: 22px;
+}
+
+.reward-header p {
+    font-size: 13px;
+}
+
+.reward-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reward-content {
+    overflow: hidden;
+}
+.reward-list-container{
+    width: 234px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+}
+.reward-list {
+    width: 90px;
+    float: left;
+    margin: 17px 14px 0 11px;
+    position: relative;
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+}
+
+.reward-txt img {
+    width: 73px;
+    margin-top: 50px;
+}
+
+.reward-img {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.reward-img img {
+    width: 53px;
+}
+
+.reward-line {
+    /*margin-top: 40px;*/
+    width: 100%;
+    position: relative;
+    padding-top: 30px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #e7e7e7;
+}
+
+.line-txt {
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+    top: 20px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.line-txt a {
+    background-color: #fff;
+    text-align: center;
+    color: #e7e7e7;
+    padding: 0 5px;
+}
+/*打赏列表*/
+.reward-bottom{
+    height: 25%;
+    margin: 1em 0 0;
+    width: 100%;
+    overflow-y:scroll;
+    text-align: center;
+}
+.reward-bottom ul{
+    width: 304px;
+    list-style: none;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.reward-bottom ul li{
+    margin-right: 5px;
+    float: left;
+}
+.reward-bottom ul li img{
+    width: 33px;
+}
+
+/*还想要钱*/
+.footer-waring{
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+    width: 216px;
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    padding: 8px 0 9px;
+    margin-left: -108px;
+}
+.footer-waring {
+    text-align: center;
+    font-size: 17px;
+    color: #fff;
+}
+
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+#infopage{
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    z-index: 9;
+}
+html,body{
+    height: 100%;
+}
+

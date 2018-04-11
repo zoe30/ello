@@ -1,0 +1,120 @@
+@import "global/site.variable";
+@import "global/common.less";
+@import "global/iconfonts.less";
+@import "global/mixins.less";
+
+@import "element/tips.less";
+@import "element/screen.less";
+
+
+.logo{
+  position: absolute;
+  left: 15%;
+  top: 20%;
+  width: 70%;
+  img{
+    width:100%;
+  }
+}
+
+#start{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  .hcenter;
+  font-size: 10rem;
+  line-height: 10rem;
+  color: #fff;
+}
+
+#uiend{
+  display:none;
+}
+
+.buttons{
+  position: absolute;
+  bottom: 3rem;
+  width:100%;
+  height: auto;
+  text-align:center;
+  li{
+    display: inline-block;
+    margin-left: 6.6rem;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+  i,span{
+    display: block;
+    color: #fff;
+  }
+  .icon{
+    font-size: 2.5rem;
+  }
+  span{
+    line-height:2em;
+  }
+  &.ended{
+    width: auto;
+    left: 2.5rem;
+    li{
+      display: block;
+      margin: 1.5rem 0 0 !important;
+    }
+  }
+  .btnSetting{
+    position:fixed;
+    top: 1.5rem;
+    right:2rem;
+    font-size: 3rem;
+  }
+  .btnShang{
+    //opacity: .4;
+  }
+}
+
+#loadscene{
+  position:absolute;
+  right:2.5rem;
+  bottom:4.2rem;
+  color:#fff;
+  font-size: 3rem;
+}
+
+.result{
+  display:none;
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  text-align:center;
+  #rank1,#rank2,#rank3{
+    opacity: 1;
+    transition: all .3s;
+  }
+}
+.playing{
+  .result{
+    display: block;
+  }
+  #start{
+    display: none;
+  }
+  #rank1,#rank2,#rank3{
+    opacity: 0;
+  }
+}
+#rank1{
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+#score{
+  margin-top: .5rem;
+  font-size: 4rem;
+  line-height: 4.5rem;
+}
+#rank2{
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
