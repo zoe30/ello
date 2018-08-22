@@ -524,6 +524,7 @@ function gameover(n) {
     /*上报赛事数据*/
     if(gmUnitId){
         var uid = getQeury('uid');
+        var channel = getQeury('channel') ;
         var recordId = getQeury('recordId') ;
         var gid = getQeury('gid') ;
         var type = parseInt(getQeury('gmType') )|| 2  ;
@@ -548,16 +549,17 @@ function gameover(n) {
             data:sendData,
             dataType: "jsonp",
             success:function(res){
-                var param = '?gmUnitId='+gmUnitId+'&uid='+uid+'&gid='+gid+'&times='+new Date().getTime()+'&_sender_sdw_rfid_='+uid ;
+                var param = '?channel='channel+'&gmUnitId='+gmUnitId+'&uid='+uid+'&gid='+gid+'&times='+new Date().getTime()+'&_sender_sdw_rfid_='+uid ;
+                var host =  channel == '10911'?'http://www.shandw.com/maopao/activities/' : 'http://www.shandw.com/activities/' ;
                 if(res.result === 1){
                     window.parent.postMessage(JSON.stringify({
                         postSdwData: true,
-                        link: 'http://www.shandw.com/activities/competition/gameover.html'+param,
+                        link: host+'competition/gameover.html'+param,
                         operate: 'to_competition'
                     }), '*');
                 }else{
                     var modal = $('<div class="modal">很抱歉~~<br/>判定为重复游戏<br/>本次成绩不计入榜单<br/></div>') ;
-                    var href = 'http://www.shandw.com/Competition/competeIndex.html'+param ;
+                    var href = host+'/index.html'+param ;
                     var $btn = $("<div class='goCompetition'>进入挑战赛</div>") ;
                     $btn.click(function(){
                         window.parent.postMessage(JSON.stringify({
